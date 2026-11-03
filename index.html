@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="uz">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Non Korxonasi - hisob tizimi demo</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <div class="brand">
+          <div class="brand-mark">IN</div>
+          <div><strong>Non Korxonasi</strong><span>Hisob tizimi · demo</span></div>
+        </div>
+        <div class="company-switch"><span class="company-dot"></span><span>Non Korxonasi Demo</span><span class="chevron">⌄</span></div>
+        <div class="nav-caption">ASOSIY</div>
+        <nav id="main-nav" aria-label="Asosiy menyu">
+          <button class="nav-item active" data-page="dashboard"><span class="nav-icon">▦</span> Bosh sahifa</button>
+          <button class="nav-item" data-page="purchases"><span class="nav-icon">↙</span> Xaridlar</button>
+          <button class="nav-item" data-page="warehouse"><span class="nav-icon">▤</span> Ombor</button>
+          <button class="nav-item" data-page="production"><span class="nav-icon">⚙</span> Ishlab chiqarish</button>
+          <button class="nav-item" data-page="sales"><span class="nav-icon">↗</span> Savdo</button>
+          <button class="nav-item" data-page="pos"><span class="nav-icon">▣</span> KKM cheklari</button>
+          <button class="nav-item" data-page="accounting"><span class="nav-icon">▧</span> Buxgalteriya</button>
+          <button class="nav-item" data-page="import"><span class="nav-icon">⇧</span> 2025 import</button>
+        </nav>
+        <div class="sidebar-bottom">
+          <div class="demo-label"><span></span> DEMO MUHIT</div>
+          <div class="user-card"><div class="avatar">A</div><div><strong>Administrator</strong><span>Mahalliy demo</span></div><span class="more">•••</span></div>
+        </div>
+      </aside>
+
+      <main class="main">
+        <header class="topbar">
+          <div class="breadcrumbs">Non Korxonasi <span>/</span> <strong id="crumb">Bosh sahifa</strong></div>
+          <div class="top-actions">
+            <span class="period"><span class="calendar">▦</span> 2025-yil <span class="chevron">⌄</span></span>
+            <button class="icon-button" aria-label="Bildirishnomalar">♧<i></i></button>
+            <div class="avatar small">A</div>
+          </div>
+        </header>
+
+        <section class="content">
+          <div class="page-heading">
+            <div><div class="eyebrow">DUSHANBA, 3-NOYABR 2025</div><h1 id="page-title">Bosh sahifa</h1><p id="page-subtitle">Korxonangizning kundalik holati bir joyda.</p></div>
+            <button class="button primary" id="new-document"><span>＋</span> Yangi hujjat</button>
+          </div>
+          <div class="notice"><span class="notice-icon">i</span><div><strong>Bu sinov demo</strong><span>Ko'rsatilgan raqamlar namunaviy. Hujjatlar faqat shu brauzerda saqlanadi, haqiqiy buxgalteriya yozuvlarini yaratmaydi.</span></div><button id="dismiss-notice" aria-label="Yopish">×</button></div>
+
+          <div id="dashboard-page" class="page-view">
+            <div class="metric-grid">
+              <article class="metric-card"><div class="metric-top"><span>BUGUNGI SAVDO</span><span class="metric-icon orange">↗</span></div><strong class="metric-value">18 420 000 <small>so'm</small></strong><div class="metric-foot"><span class="positive">↑ 8,2%</span> kechagi kunga nisbatan</div><div class="sparkline orange-line">▁▂▁▃▂▄▃▅▄▆▅▇</div></article>
+              <article class="metric-card"><div class="metric-top"><span>OMBOR QOLDIG'I</span><span class="metric-icon blue">▤</span></div><strong class="metric-value">284 650 000 <small>so'm</small></strong><div class="metric-foot"><span>12 ta</span> mahsulot turi nazoratda</div><div class="sparkline blue-line">▆▅▆▄▅▃▄▃▅▂▃▂</div></article>
+              <article class="metric-card"><div class="metric-top"><span>MIJOZLAR QARZI</span><span class="metric-icon purple">◷</span></div><strong class="metric-value">42 800 000 <small>so'm</small></strong><div class="metric-foot"><span>8 ta</span> mijoz bo'yicha ochiq qarz</div><div class="sparkline purple-line">▃▃▄▅▄▆▅▆▄▃▄▂</div></article>
+              <article class="metric-card"><div class="metric-top"><span>ISHLAB CHIQARISH</span><span class="metric-icon green">⚙</span></div><strong class="metric-value">3 240 <small>dona</small></strong><div class="metric-foot"><span class="positive">Bugun</span> ishlab chiqarilgan mahsulot</div><div class="sparkline green-line">▂▃▂▄▃▅▄▆▅▇▆▇</div></article>
+            </div>
+
+            <div class="dashboard-grid">
+              <article class="panel sales-panel">
+                <div class="panel-heading"><div><h2>Savdo dinamikasi</h2><p>2025-yil davomida, so'm</p></div><button class="select-button">Oylar bo'yicha⌄</button></div>
+                <div class="chart-legend"><span><i class="legend-sales"></i> Savdo</span><span><i class="legend-cost"></i> Tannarx</span></div>
+                <div class="chart-wrap">
+                  <div class="y-labels"><span>400 mln</span><span>300 mln</span><span>200 mln</span><span>100 mln</span><span>0</span></div>
+                  <div class="chart">
+                    <div class="grid-line l1"></div><div class="grid-line l2"></div><div class="grid-line l3"></div><div class="grid-line l4"></div>
+                    <svg viewBox="0 0 760 215" preserveAspectRatio="none" role="img" aria-label="Savdo va tannarx grafigi">
+                      <defs><linearGradient id="salesFill" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#f0a341" stop-opacity=".2"/><stop offset="1" stop-color="#f0a341" stop-opacity="0"/></linearGradient></defs>
+                      <path d="M0 166 C36 158 45 131 69 143 S110 168 138 135 S182 122 207 128 S248 148 276 112 S317 95 345 113 S385 127 414 86 S454 94 483 71 S523 84 552 64 S593 77 621 47 S662 69 690 37 S731 52 760 25 L760 215 L0 215Z" fill="url(#salesFill)"/>
+                      <path d="M0 166 C36 158 45 131 69 143 S110 168 138 135 S182 122 207 128 S248 148 276 112 S317 95 345 113 S385 127 414 86 S454 94 483 71 S523 84 552 64 S593 77 621 47 S662 69 690 37 S731 52 760 25" fill="none" stroke="#e99a36" stroke-width="3"/>
+                      <path d="M0 192 C36 185 45 166 69 173 S110 191 138 166 S182 157 207 161 S248 176 276 151 S317 139 345 151 S385 162 414 132 S454 138 483 121 S523 132 552 116 S593 127 621 104 S662 122 690 96 S731 109 760 83" fill="none" stroke="#7b91a8" stroke-width="2" stroke-dasharray="5 5"/>
+                    </svg>
+                    <div class="x-labels"><span>Yan</span><span>Fev</span><span>Mar</span><span>Apr</span><span>May</span><span>Iyun</span><span>Iyul</span><span>Avg</span><span>Sen</span><span>Okt</span><span>Noy</span><span>Dek</span></div>
+                  </div>
+                </div>
+              </article>
+              <article class="panel stock-panel">
+                <div class="panel-heading"><div><h2>Omborda kam qolgan</h2><p>Minimal miqdordan past mahsulotlar</p></div><button class="text-button" data-navigate="warehouse">Barchasi <span>→</span></button></div>
+                <div class="stock-list">
+                  <div class="stock-row"><div class="product-icon flour">M</div><div class="stock-info"><strong>Bug'doy uni, 1-nav</strong><span>Xomashyo · kg</span></div><div class="stock-qty"><strong>86</strong><span>kg qoldi</span></div><div class="stock-status critical">Kam</div></div>
+                  <div class="stock-row"><div class="product-icon yeast">X</div><div class="stock-info"><strong>Presslangan xamirturush</strong><span>Xomashyo · kg</span></div><div class="stock-qty"><strong>12</strong><span>kg qoldi</span></div><div class="stock-status critical">Kam</div></div>
+                  <div class="stock-row"><div class="product-icon salt">T</div><div class="stock-info"><strong>Osh tuzi</strong><span>Xomashyo · kg</span></div><div class="stock-qty"><strong>44</strong><span>kg qoldi</span></div><div class="stock-status warning">Nazorat</div></div>
+                  <div class="stock-row"><div class="product-icon bag">Q</div><div class="stock-info"><strong>Non qopi</strong><span>Qadoqlash · dona</span></div><div class="stock-qty"><strong>320</strong><span>dona qoldi</span></div><div class="stock-status warning">Nazorat</div></div>
+                </div>
+              </article>
+            </div>
+
+            <article class="panel table-panel">
+              <div class="panel-heading"><div><h2>Oxirgi hujjatlar</h2><p>Korxonadagi so'nggi amaliyotlar</p></div><button class="text-button" data-navigate="accounting">Barcha hujjatlar <span>→</span></button></div>
+              <div class="table-scroll"><table><thead><tr><th>HUJJAT</th><th>RAQAMI</th><th>SANA</th><th>KONTRAGENT</th><th>SUMMA</th><th>HOLATI</th></tr></thead><tbody id="recent-documents"></tbody></table></div>
+            </article>
+          </div>
+
+          <div id="module-page" class="page-view hidden">
+            <div class="module-summary">
+              <article class="panel module-intro"><div class="module-symbol" id="module-symbol">▤</div><div><h2 id="module-heading">Modul</h2><p id="module-description"></p></div></article>
+              <div class="module-stats" id="module-stats"></div>
+            </div>
+            <article class="panel import-panel hidden" id="import-panel">
+              <div class="panel-heading"><div><h2>Faylni tekshirish</h2><p>CSV faylni tanlang. Ma'lumotlar shu brauzerda ko'rib chiqiladi, hech qayerga yuborilmaydi.</p></div></div>
+              <label class="file-drop" for="csv-file"><span class="upload-mark">⇧</span><strong>CSV faylni tanlang</strong><span>Nuqtali vergul, vergul yoki tab bilan ajratilgan fayllar</span><input id="csv-file" type="file" accept=".csv,text/csv"></label>
+              <p class="import-disclaimer">XLSX hozircha demo importida qo'llanmaydi. Fayl tanlash faqat ko'rib chiqish uchun; 1C yozuvi yoki buxgalteriya o'tkazmasi yaratilmaydi.</p>
+              <div class="import-result hidden" id="import-result"><div class="import-meta" id="import-meta"></div><div class="table-scroll"><table><thead id="import-head"></thead><tbody id="import-body"></tbody></table></div></div>
+            </article>
+            <article class="panel table-panel module-table" id="module-table">
+              <div class="panel-heading"><div><h2 id="module-table-title">Hujjatlar</h2><p>Demo yozuvlari va shu brauzerda kiritgan ma'lumotlaringiz</p></div><button class="button secondary" id="module-new-document">＋ Yangi hujjat</button></div>
+              <div class="table-scroll"><table><thead><tr><th>HUJJAT</th><th>RAQAMI</th><th>SANA</th><th>KONTRAGENT / IZOH</th><th>SUMMA</th><th>HOLATI</th></tr></thead><tbody id="module-documents"></tbody></table></div>
+              <div class="empty-state hidden" id="empty-state">Hozircha bu modulda hujjat yo'q. “Yangi hujjat” orqali demo yozuv qo'shing.</div>
+            </article>
+            <div class="module-note" id="module-note"><span>i</span> Demo versiyada yozuvlar faqat brauzer xotirasida saqlanadi. Haqiqiy 1C hisob-kitobi va soliq hisobotlarini shakllantirmaydi.</div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <div class="modal-backdrop hidden" id="document-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <form class="modal" id="document-form">
+        <div class="modal-head"><div><span class="eyebrow">DEMO HUJJAT</span><h2 id="modal-title">Yangi hujjat</h2></div><button type="button" class="close-button" id="close-modal" aria-label="Yopish">×</button></div>
+        <label>Hujjat turi<select id="document-type" required><option value="purchase">Xarid kirimi</option><option value="warehouse">Ombor harakati</option><option value="production">Ishlab chiqarish</option><option value="sale">Savdo realizatsiyasi</option><option value="pos">KKM cheki</option><option value="accounting">Buxgalteriya yozuvi</option></select></label>
+        <div class="form-row"><label>Sana<input id="document-date" type="date" required></label><label>Summa (so'm)<input id="document-amount" type="number" min="0" step="1000" placeholder="0" required></label></div>
+        <label>Kontragent yoki izoh<input id="document-partner" type="text" maxlength="100" placeholder="Masalan: Yetkazib beruvchi yoki mahsulot" required></label>
+        <div class="modal-warning">Bu demo yozuv. Saqlash faqat brauzerda amalga oshadi, buxgalteriya o'tkazmasi yaratilmaydi.</div>
+        <div class="modal-actions"><button type="button" class="button secondary" id="cancel-modal">Bekor qilish</button><button type="submit" class="button primary">Demo hujjatni saqlash</button></div>
+      </form>
+    </div>
+
+    <div class="toast hidden" id="toast" role="status"></div>
+    <script src="app.js"></script>
+  </body>
+</html>
