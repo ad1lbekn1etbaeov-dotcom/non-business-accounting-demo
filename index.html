@@ -7,27 +7,29 @@
     <link rel="stylesheet" href="styles.css">
   </head>
   <body>
+    <section class="login-screen hidden" id="login-screen">
+      <form class="login-card" id="login-form">
+        <div class="brand-mark login-mark">NK</div>
+        <div class="eyebrow">BRAUZER DEMO MUHITI</div>
+        <h1>Tizimga kirish</h1>
+        <p>Demo korxona hisob tizimini ko'rish uchun kiring.</p>
+        <label>Foydalanuvchi nomi<input id="login-name" autocomplete="username" value="demo" required></label>
+        <label>Parol<input id="login-password" autocomplete="current-password" type="password" placeholder="Istalgan demo parol" required></label>
+        <button class="button primary login-submit" type="submit">Demo sifatida kirish →</button>
+        <span class="login-hint">Bu sinov kirishi. Haqiqiy hisoblar yoki maxfiylik himoyasi yo'q.</span>
+      </form>
+    </section>
     <div class="app-shell">
       <aside class="sidebar">
         <div class="brand">
           <div class="brand-mark">IN</div>
           <div><strong>Non Korxonasi</strong><span>Hisob tizimi · demo</span></div>
         </div>
-        <div class="company-switch"><span class="company-dot"></span><span>Non Korxonasi Demo</span><span class="chevron">⌄</span></div>
-        <div class="nav-caption">ASOSIY</div>
-        <nav id="main-nav" aria-label="Asosiy menyu">
-          <button class="nav-item active" data-page="dashboard"><span class="nav-icon">▦</span> Bosh sahifa</button>
-          <button class="nav-item" data-page="purchases"><span class="nav-icon">↙</span> Xaridlar</button>
-          <button class="nav-item" data-page="warehouse"><span class="nav-icon">▤</span> Ombor</button>
-          <button class="nav-item" data-page="production"><span class="nav-icon">⚙</span> Ishlab chiqarish</button>
-          <button class="nav-item" data-page="sales"><span class="nav-icon">↗</span> Savdo</button>
-          <button class="nav-item" data-page="pos"><span class="nav-icon">▣</span> KKM cheklari</button>
-          <button class="nav-item" data-page="accounting"><span class="nav-icon">▧</span> Buxgalteriya</button>
-          <button class="nav-item" data-page="import"><span class="nav-icon">⇧</span> 2025 import</button>
-        </nav>
+        <button class="company-switch" id="company-switch"><span class="company-dot"></span><span>Non Korxonasi Demo</span><span class="chevron">⌄</span></button>
+        <nav id="main-nav" aria-label="Asosiy menyu"></nav>
         <div class="sidebar-bottom">
           <div class="demo-label"><span></span> DEMO MUHIT</div>
-          <div class="user-card"><div class="avatar">A</div><div><strong>Administrator</strong><span>Mahalliy demo</span></div><span class="more">•••</span></div>
+          <div class="user-card"><div class="avatar" id="user-avatar">D</div><div><strong id="user-name">Demo foydalanuvchi</strong><span>Mahalliy demo</span></div><button class="more" id="logout-button" title="Tizimdan chiqish" aria-label="Tizimdan chiqish">↪</button></div>
         </div>
       </aside>
 
@@ -35,15 +37,15 @@
         <header class="topbar">
           <div class="breadcrumbs">Non Korxonasi <span>/</span> <strong id="crumb">Bosh sahifa</strong></div>
           <div class="top-actions">
-            <span class="period"><span class="calendar">▦</span> 2025-yil <span class="chevron">⌄</span></span>
-            <button class="icon-button" aria-label="Bildirishnomalar">♧<i></i></button>
-            <div class="avatar small">A</div>
+            <label class="period"><span class="calendar">▦</span><select id="year-select" aria-label="Hisobot yili"><option value="2025">2025-yil</option><option value="2024">2024-yil</option><option value="2026">2026-yil</option></select></label>
+            <button class="icon-button" id="notifications-button" aria-label="Bildirishnomalar" title="Demo eslatmalari">♧<i></i></button>
+            <button class="avatar small profile-button" id="profile-button" aria-label="Profil">D</button>
           </div>
         </header>
 
         <section class="content">
           <div class="page-heading">
-            <div><div class="eyebrow">DUSHANBA, 3-NOYABR 2025</div><h1 id="page-title">Bosh sahifa</h1><p id="page-subtitle">Korxonangizning kundalik holati bir joyda.</p></div>
+            <div><div class="eyebrow" id="period-label">2025-YIL HISOBOT DAVRI</div><h1 id="page-title">Bosh sahifa</h1><p id="page-subtitle">Korxonangizning kundalik holati bir joyda.</p></div>
             <button class="button primary" id="new-document"><span>＋</span> Yangi hujjat</button>
           </div>
           <div class="notice"><span class="notice-icon">i</span><div><strong>Bu sinov demo</strong><span>Ko'rsatilgan raqamlar namunaviy. Hujjatlar faqat shu brauzerda saqlanadi, haqiqiy buxgalteriya yozuvlarini yaratmaydi.</span></div><button id="dismiss-notice" aria-label="Yopish">×</button></div>
@@ -58,7 +60,7 @@
 
             <div class="dashboard-grid">
               <article class="panel sales-panel">
-                <div class="panel-heading"><div><h2>Savdo dinamikasi</h2><p>2025-yil davomida, so'm</p></div><button class="select-button">Oylar bo'yicha⌄</button></div>
+                <div class="panel-heading"><div><h2>Savdo dinamikasi</h2><p id="chart-caption">2025-yil davomida, so'm</p></div><select class="select-button" id="chart-period" aria-label="Grafik davri"><option value="month">Oylar bo'yicha</option><option value="quarter">Choraklar bo'yicha</option></select></div>
                 <div class="chart-legend"><span><i class="legend-sales"></i> Savdo</span><span><i class="legend-cost"></i> Tannarx</span></div>
                 <div class="chart-wrap">
                   <div class="y-labels"><span>400 mln</span><span>300 mln</span><span>200 mln</span><span>100 mln</span><span>0</span></div>
@@ -102,9 +104,19 @@
               <p class="import-disclaimer">XLSX hozircha demo importida qo'llanmaydi. Fayl tanlash faqat ko'rib chiqish uchun; 1C yozuvi yoki buxgalteriya o'tkazmasi yaratilmaydi.</p>
               <div class="import-result hidden" id="import-result"><div class="import-meta" id="import-meta"></div><div class="table-scroll"><table><thead id="import-head"></thead><tbody id="import-body"></tbody></table></div></div>
             </article>
+            <article class="panel report-panel hidden" id="report-panel">
+              <div class="report-controls">
+                <label>Hisobot davri<select id="report-period"></select></label>
+                <label>Hisob raqami<select id="report-account"><option value="all">Barcha hisoblar</option><option>4010</option><option>6010</option><option>1010</option><option>2010</option><option>9010</option></select></label>
+                <button class="button secondary" id="print-report">Chop etish / PDF</button>
+              </div>
+              <div class="report-explainer" id="report-explainer"></div>
+              <div class="table-scroll"><table class="report-table"><thead id="report-head"></thead><tbody id="report-body"></tbody><tfoot id="report-foot"></tfoot></table></div>
+              <div class="balance-status hidden" id="balance-status"></div>
+            </article>
             <article class="panel table-panel module-table" id="module-table">
               <div class="panel-heading"><div><h2 id="module-table-title">Hujjatlar</h2><p>Demo yozuvlari va shu brauzerda kiritgan ma'lumotlaringiz</p></div><button class="button secondary" id="module-new-document">＋ Yangi hujjat</button></div>
-              <div class="table-scroll"><table><thead><tr><th>HUJJAT</th><th>RAQAMI</th><th>SANA</th><th>KONTRAGENT / IZOH</th><th>SUMMA</th><th>HOLATI</th></tr></thead><tbody id="module-documents"></tbody></table></div>
+              <div class="table-scroll"><table><thead><tr><th>HUJJAT</th><th>RAQAMI</th><th>SANA</th><th>KONTRAGENT / IZOH</th><th>SUMMA</th><th>HOLATI</th><th></th></tr></thead><tbody id="module-documents"></tbody></table></div>
               <div class="empty-state hidden" id="empty-state">Hozircha bu modulda hujjat yo'q. “Yangi hujjat” orqali demo yozuv qo'shing.</div>
             </article>
             <div class="module-note" id="module-note"><span>i</span> Demo versiyada yozuvlar faqat brauzer xotirasida saqlanadi. Haqiqiy 1C hisob-kitobi va soliq hisobotlarini shakllantirmaydi.</div>
@@ -116,7 +128,7 @@
     <div class="modal-backdrop hidden" id="document-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
       <form class="modal" id="document-form">
         <div class="modal-head"><div><span class="eyebrow">DEMO HUJJAT</span><h2 id="modal-title">Yangi hujjat</h2></div><button type="button" class="close-button" id="close-modal" aria-label="Yopish">×</button></div>
-        <label>Hujjat turi<select id="document-type" required><option value="purchase">Xarid kirimi</option><option value="warehouse">Ombor harakati</option><option value="production">Ishlab chiqarish</option><option value="sale">Savdo realizatsiyasi</option><option value="pos">KKM cheki</option><option value="accounting">Buxgalteriya yozuvi</option></select></label>
+        <label>Hujjat turi<select id="document-type" required><option value="purchase">Xarid kirimi</option><option value="warehouse">Ombor harakati</option><option value="production">Ishlab chiqarish</option><option value="sale">Savdo realizatsiyasi</option><option value="pos">KKM cheki</option><option value="cash">Kassa / bank</option><option value="payroll">Ish haqi</option><option value="expense">Xarajat</option><option value="accounting">Buxgalteriya yozuvi</option></select></label>
         <div class="form-row"><label>Sana<input id="document-date" type="date" required></label><label>Summa (so'm)<input id="document-amount" type="number" min="0" step="1000" placeholder="0" required></label></div>
         <label>Kontragent yoki izoh<input id="document-partner" type="text" maxlength="100" placeholder="Masalan: Yetkazib beruvchi yoki mahsulot" required></label>
         <div class="modal-warning">Bu demo yozuv. Saqlash faqat brauzerda amalga oshadi, buxgalteriya o'tkazmasi yaratilmaydi.</div>
